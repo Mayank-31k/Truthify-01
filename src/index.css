@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 20% 96%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 220 20% 2%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 20% 3%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 20% 3%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 20% 7%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 20% 7%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 20% 7%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 224 76% 48%;
+    
+    /* Keep truth and fake colors bright in dark mode */
+    --truth: 142 76% 45%;
+    --truth-muted: 142 76% 45% / 0.2;
+    
+    --fake: 0 100% 65%;
+    --fake-muted: 0 100% 65% / 0.2;
+    
+    --neutral: 211 100% 50%;
+    --neutral-muted: 211 100% 50% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans transition-colors duration-300;
+    background-image: radial-gradient(
+      circle at center,
+      rgba(0, 122, 255, 0.05) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: radial-gradient(
+      circle at center,
+      rgba(29, 78, 216, 0.12) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
+
+  /* Glass morphism styles */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .dark .glass {
+    @apply bg-black/10 border-white/10;
+  }
+}
+
+/* Custom animations and transitions */
+@layer utilities {
+  .transition-transform-opacity {
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .transition-all-300 {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Dark mode transition */
+  .transition-theme {
+    @apply transition-colors duration-300;
+  }
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
