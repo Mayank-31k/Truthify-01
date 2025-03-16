@@ -189,7 +189,7 @@ const TruthChecker: React.FC = () => {
           <TabsContent value="text">
             <div className="mb-6 relative">
               <Textarea
-                placeholder="Paste or type text to check if it's real or fake..."
+                placeholder="Paste or type text to check if it's real or fake... For example: The Pyramids of Giza were made by aliens."
                 value={text}
                 onChange={handleInputChange}
                 className={`min-h-[120px] resize-none transition-all duration-300 focus:shadow-md 
