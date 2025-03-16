@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import TruthChecker from '@/components/TruthChecker';
 import { motion } from 'framer-motion';
-import { Zap, ShieldCheck, Heart } from 'lucide-react';
+import { Zap, ShieldCheck, Heart, Info, CheckCircle, XCircle } from 'lucide-react';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -54,6 +54,67 @@ const Index = () => {
         />
       </div>
 
+      {/* Enhanced About section positioned on the left side */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
+        className="fixed left-5 top-1/4 max-w-xs bg-gradient-to-br from-primary/10 via-purple-500/15 to-blue-500/10 backdrop-blur-md border border-primary/20 rounded-lg p-5 shadow-lg hover:shadow-primary/20 transition-all duration-300 z-10"
+      >
+        <motion.div 
+          className="absolute -z-10 inset-0 rounded-lg opacity-20 overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.15 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/30 rounded-full blur-xl" />
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/30 rounded-full blur-xl" />
+        </motion.div>
+        
+        <div className="flex flex-col gap-3">
+          <motion.div 
+            className="flex items-center gap-2 mb-1"
+            initial={{ y: -5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.4 }}
+          >
+            <div className="bg-primary/20 p-1.5 rounded-full">
+              <Info className="h-5 w-5 text-primary" />
+            </div>
+            <h3 className="font-bold text-xl bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">About Truthify</h3>
+          </motion.div>
+          
+          <motion.p 
+            className="text-sm text-foreground/90 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.6 }}
+          >
+            Truthify is an AI-powered fact-checking and content verification platform that helps users determine if information is real or fake. Using advanced AI models, Truthify analyzes both text and images to detect misinformation, manipulated content, and fake news.
+          </motion.p>
+          
+          <motion.div
+            className="flex flex-col gap-2 mt-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+              <span className="text-xs">Advanced text analysis</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+              <span className="text-xs">Image verification technology</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+              <span className="text-xs">Real-time results with confidence scores</span>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
       {/* Credit box positioned on the right side */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
@@ -79,9 +140,10 @@ const Index = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="inline-block mb-4 rounded-full p-3 bg-gradient-to-br from-purple-500/20 to-blue-500/20"
         >
-          <ShieldCheck 
-            size={32}
-            className="text-purple-500" 
+          <img 
+            src="/favicon.svg" 
+            alt="Truthify Logo" 
+            className="w-8 h-8"
           />
         </motion.div>
         
