@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truthify OG Image Creator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #0f172a;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .og-container {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 30px;
+    }
+    .title {
+      font-size: 80px;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(to right, #a855f7, #3b82f6, #06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+    .tagline {
+      font-size: 32px;
+      color: #94a3b8;
+      margin: 0;
+      max-width: 80%;
+      text-align: center;
+    }
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    .circle1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+      top: -200px;
+      left: -100px;
+    }
+    .circle2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+      bottom: -200px;
+      right: -100px;
+    }
+    .circle3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+      top: 50px;
+      right: 100px;
+    }
+    .content {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-container">
+    <div class="bg-circle circle1"></div>
+    <div class="bg-circle circle2"></div>
+    <div class="bg-circle circle3"></div>
+    
+    <div class="content">
+      <svg class="logo" width="180" height="180" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Glowing background circle -->
+        <circle cx="16" cy="16" r="15" fill="url(#glow)" />
+        
+        <!-- Tech circuit lines -->
+        <path d="M8 16 H24" stroke="#00ffff" stroke-width="1.5" stroke-linecap="round"></path>
+        <path d="M16 8 V24" stroke="#00ffff" stroke-width="1.5" stroke-linecap="round"></path>
+        
+        <!-- Outer ring -->
+        <circle cx="16" cy="16" r="12" stroke="url(#ring)" stroke-width="1" fill="none"></circle>
+        
+        <!-- Center eye -->
+        <circle cx="16" cy="16" r="6" fill="url(#eye)" />
+        
+        <!-- Definitions -->
+        <defs>
+          <!-- Glowing background gradient -->
+          <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#4a00ff" />
+            <stop offset="100%" stop-color="#000033" />
+          </radialGradient>
+          
+          <!-- Ring gradient -->
+          <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00ffff" />
+            <stop offset="100%" stop-color="#4a00ff" />
+          </linearGradient>
+          
+          <!-- Eye gradient -->
+          <radialGradient id="eye" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#00ffff" />
+            <stop offset="100%" stop-color="#0066ff" />
+          </radialGradient>
+        </defs>
+      </svg>
+      
+      <h1 class="title">Truthify</h1>
+      <p class="tagline">Verify if information is real or fake with AI</p>
+    </div>
+  </div>
+
+  <script>
+    // This is just a helper page to create the OG image
+    // Take a screenshot of this page and save it as og-image.png
+  </script>
+</body>
+</html>
