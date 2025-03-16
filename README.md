@@ -23,8 +23,7 @@ Truthify is an AI-powered fact-checking and content verification platform that h
 - **Particle Effects**: TSParticles for interactive background
 - **OCR**: Tesseract.js for extracting text from images
 - **AI Integration**: 
-  - DeepSeek API for text analysis
-  - Google Gemini API for image analysis
+  
 - **Build Tool**: Vite
 
 ## Getting Started
@@ -103,11 +102,7 @@ Truthify/
 └── ...                   # Configuration files
 ```
 
-## API Keys
 
-The application uses the following APIs:
-- DeepSeek API for text analysis
-- Google Gemini API for image analysis
 
 API keys are currently hardcoded for demonstration purposes. In a production environment, these should be stored securely using environment variables.
 
