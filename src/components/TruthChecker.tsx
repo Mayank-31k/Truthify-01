@@ -9,7 +9,7 @@ import AnimatedVerdict from "./AnimatedVerdict";
 import { verifyInformation } from "@/utils/aiService";
 import { verifyImage } from "@/utils/imageAnalysisService";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Search, Brain, ImageIcon, FilePlus2, FileX2, Text, FileText } from "lucide-react";
+import { Sparkles, Search, Brain, ImageIcon, FilePlus2, FileX2, Text, FileText, X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const TruthChecker: React.FC = () => {
@@ -24,6 +24,7 @@ const TruthChecker: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState<string>("text");
+  const [showPatientMessage, setShowPatientMessage] = useState(true);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
@@ -406,6 +407,30 @@ const TruthChecker: React.FC = () => {
           GitHub Repository
         </a>
       </motion.p>
+
+      {/* Patient message box */}
+      <AnimatePresence>
+        {showPatientMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="relative mt-4 mx-auto max-w-md bg-blue-500/10 border border-blue-500/20 rounded-lg px-4 py-3 text-center"
+          >
+            <button 
+              onClick={() => setShowPatientMessage(false)}
+              className="absolute top-1 right-1 p-1 rounded-full hover:bg-blue-500/10 transition-colors"
+              aria-label="Dismiss message"
+            >
+              <X className="h-4 w-4 text-blue-500/70" />
+            </button>
+            <p className="text-xs text-blue-500 font-medium">
+              Truthify can take time. Be patient for the truth
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {activeTab === "image" && extractedText && verdict && (
