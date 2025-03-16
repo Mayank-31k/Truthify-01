@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import TruthChecker from '@/components/TruthChecker';
 import { motion } from 'framer-motion';
-import { Zap, ShieldCheck } from 'lucide-react';
+import { Zap, ShieldCheck, Heart } from 'lucide-react';
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -54,6 +53,19 @@ const Index = () => {
           className="absolute top-[10%] right-[20%] w-[40%] h-[40%] rounded-full bg-purple-500/5 blur-3xl"
         />
       </div>
+
+      {/* Credit box positioned on the right side */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
+        className="fixed right-5 bottom-5 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-3 shadow-lg"
+      >
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Heart className="h-3 w-3 text-red-500" />
+          <span>made with love by Mayank Kumar and Pranjal Mann</span>
+        </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: -20 }}
