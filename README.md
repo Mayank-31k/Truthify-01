@@ -8,8 +8,8 @@ Truthify is an AI-powered fact-checking and content verification platform that h
 
 ## Features
 
-- **Text Analysis**: Verify the authenticity of text content using DeepSeek AI
-- **Image Analysis**: Detect manipulated or AI-generated images using Google's Gemini API
+- **Text Analysis**: Verify the authenticity of text content using trained ai model
+- **Image Analysis**: Detect manipulated or AI-generated images using OCR app APi
 - **OCR Technology**: Extract and analyze text from images using Tesseract.js
 - **Real-time Verification**: Get instant results with confidence scores
 - **Detailed Explanations**: Receive comprehensive analysis explaining why content is classified as real or fake
